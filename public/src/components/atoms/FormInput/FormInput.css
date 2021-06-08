@@ -1,0 +1,22 @@
+.form-input {
+    width: 100%;
+    padding: 0 20px;
+    display: grid;
+    grid-template: 'label input';
+    grid-template-columns: 100px 1fr;
+    margin: 5px;
+}
+
+.form-input__label {
+    margin-right: 10px;
+    grid-area: label;
+    align-self: center;
+}
+
+.form-input__input {
+    grid-area: input;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 5px 10px;
+    outline: grey;
+}

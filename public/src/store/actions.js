@@ -1,4 +1,8 @@
-export const CHANGE_NAME = 'CHANGE_NAME';
-export const CHANGE_LAST_NAME = 'CHANGE_LAST_NAME';
-export const CHANGE_EMAIL = 'CHANGE_EMAIL';
-export const CHANGE_DATE = 'CHANGE_DATE';
+export const UPDATE_EVENT = 'UPDATE_EVENT';
+
+export const updateEvent = (value) => {
+	return {
+		type: UPDATE_EVENT,
+		value,
+	}
+}

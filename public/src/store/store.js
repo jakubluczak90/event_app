@@ -1,14 +1,26 @@
-const { createStore } = require('redux');
+import { createStore } from 'redux';
+import { UPDATE_EVENT } from "./actions";
 
 const defaultState = {
-	firstName: '',
-	lastName: '',
-	email: '',
-	date: '',
+	event: {
+		firstName: '',
+		lastName: '',
+		email: '',
+		date: '',
+	},
 };
 
 const eventReducer = (state = defaultState, action) => {
-
+	switch (action.type) {
+		case UPDATE_EVENT: {
+			return {
+				event: action.value,
+			}
+		}
+		default: {
+			return state;
+		}
+	}
 }
 
 const store = createStore(eventReducer);

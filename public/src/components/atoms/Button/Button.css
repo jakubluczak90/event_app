@@ -1,0 +1,19 @@
+.btn {
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid grey;
+    cursor: pointer
+}
+
+.btn.btn--success {
+    color: white;
+    background: green;
+    border: 1px solid lightgreen;
+}
+
+.btn.btn--success:hover {
+    background: lightgreen;
+    border: 1px solid green;
+}
