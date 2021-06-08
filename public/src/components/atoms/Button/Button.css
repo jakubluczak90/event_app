@@ -17,3 +17,7 @@
     background: lightgreen;
     border: 1px solid green;
 }
+
+.btn:disabled {
+    background: grey !important;
+}

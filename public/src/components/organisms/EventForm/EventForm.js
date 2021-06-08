@@ -8,6 +8,7 @@ const EventForm = (props) => {
 		<div>
 			<Form
 				onFormSubmit={() => {
+					console.log(props.event);
 				}}
 				onFormChange={(value) => {
 					props.updateEvent(value);
