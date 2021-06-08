@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //routes
 
-app.use('/event', eventRouter);
+app.use('api/event', eventRouter);
 
 app.listen(process.env.PORT, () => {
 	log(`app listening on port ${process.env.PORT}`);
