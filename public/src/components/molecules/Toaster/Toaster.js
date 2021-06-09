@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './Toaster.css';
 
 const getToasterClasses = (type) => {
@@ -27,6 +29,11 @@ const Toaster = (props) => {
 			</div>
 		)
 		: null;
+}
+
+Toaster.propTypes = {
+	onClose: PropTypes.func.isRequired,
+	type: PropTypes.string,
 }
 
 export default Toaster;

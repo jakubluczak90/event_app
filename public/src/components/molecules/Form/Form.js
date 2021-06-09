@@ -54,6 +54,14 @@ const EventForm = (props) => {
 		})
 	},[datepickerValue]);
 
+	const onFormChange = (name) => {
+		return (value) => {
+			const eventCopy = {...event};
+			eventCopy[name] = value;
+			setEvent(eventCopy);
+		}
+	}
+
 	return (
 		<form
 			className="form"
