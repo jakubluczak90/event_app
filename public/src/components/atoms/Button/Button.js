@@ -19,7 +19,6 @@ const Button = (props) => {
 
 	const buttonClass = getButtonClass(props.type)
 
-	console.log(props.disabled)
 	return (
 		<button
 			className={buttonClass}

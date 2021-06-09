@@ -6,7 +6,7 @@ const defaultState = {
 		firstName: '',
 		lastName: '',
 		email: '',
-		date: '',
+		date: new Date(),
 	},
 };
 

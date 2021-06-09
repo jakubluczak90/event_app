@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import './FormInput.css';
 
 const FormInput = (props) => {
+	const [value, setValue] = useState(props.value)
+	const valueFromProps = props.value;
+
+	useEffect(() => {
+		setValue(valueFromProps)
+	}, [valueFromProps]);
+
 	return (
 		<div className="form-input">
 			<label
@@ -18,9 +25,10 @@ const FormInput = (props) => {
 				placeholder={props.label}
 				onChange={(event) => {
 					const value = event.target.value;
-					const name = props.name;
-					props.onChange(name, value);
+					setValue(value);
+					props.onChange(value);
 				}}
+				value={value}
 			/>
 		</div>
 	);
