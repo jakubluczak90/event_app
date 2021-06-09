@@ -3,8 +3,11 @@ import Form from './../../molecules/Form/Form';
 import { postEvent } from "../../../api/postEvent";
 import Loader from 'react-loader-spinner';
 import Toaster from "../../molecules/Toaster/Toaster";
+import {connect} from "react-redux";
+import { getEvents } from "../../../api/getEvents";
+import { addEvents } from "../../../store/actions";
 
-const EventForm = () => {
+const EventForm = (props) => {
 	const [shouldDisplayLoader, setLoader] = useState(false)
 	const [toaster, setToaster] = useState({ visible: false });
 
@@ -12,6 +15,10 @@ const EventForm = () => {
 		setLoader(true);
 		try {
 			await postEvent(event);
+			const events = await getEvents();
+			props.updateEvents(events.data);
+
+
 			setToaster({
 				type: 'success',
 				message: 'Event saved',
@@ -50,4 +57,10 @@ const EventForm = () => {
 	)
 }
 
-export default EventForm;
+const mapActionsToProps = (dispatch) => {
+	return {
+		updateEvents: (events) => dispatch(addEvents(events))
+	}
+}
+
+export default connect(null, mapActionsToProps)(EventForm);
