@@ -1,8 +1,8 @@
-export const UPDATE_EVENT = 'UPDATE_EVENT';
+export const ADD_EVENTS = 'ADD_EVENTS';
 
-export const updateEvent = (value) => {
+export const addEvents = (events) => {
 	return {
-		type: UPDATE_EVENT,
-		value,
+		type: ADD_EVENTS,
+		events,
 	}
 }
