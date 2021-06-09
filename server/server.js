@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const eventRouter = require('./routes/event');
 
 const log = require('./utils/log');
-const establishDbConnection = require('./db/createDb');
+const establishDbConnection = require('./model/db/createDb');
 
 const app = express();
 dotenv.config();
